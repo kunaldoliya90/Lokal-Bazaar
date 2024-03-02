@@ -78,6 +78,10 @@ class THelperFunctions {
     return MediaQuery.of(Get.context!).size;
   }
 
+  static double screenWidth() {
+    return MediaQuery.of(Get.context!).size.width;
+  }
+
   static double screenHeight() {
     return MediaQuery.of(Get.context!).size.height;
   }
@@ -100,7 +104,4 @@ class THelperFunctions {
     }
     return wrappedList;
   }
-
-
-  
 }
