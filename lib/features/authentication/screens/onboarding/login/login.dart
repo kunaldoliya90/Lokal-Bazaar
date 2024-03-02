@@ -1,4 +1,5 @@
 import 'package:ecomapp/common/styles/spacing_styles.dart';
+import 'package:ecomapp/features/authentication/screens/signup/signup_screen.dart';
 import 'package:ecomapp/utils/constants/colors.dart';
 import 'package:ecomapp/utils/constants/image_strings.dart';
 import 'package:ecomapp/utils/constants/sizes.dart';
@@ -52,18 +53,28 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     TextFormField(
                       decoration: const InputDecoration(
-                          prefixIcon: Icon(Iconsax.direct_right),
-                          labelText: "Enter your email."),
+                        prefixIcon: Icon(Iconsax.direct_right),
+                        labelText: "Enter your email.",
+                      ),
+                      style: TextStyle(
+                          fontSize: 15), // Adjust the font size as needed
                     ),
+                    SizedBox(height: TSizes.spaceBtwInputFields),
+                    SizedBox(
+                      height: 60, // Adjust the height as needed
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          prefixIcon: Icon(Iconsax.password_check),
+                          labelText: "Enter your password.",
+                          suffixIcon: Icon(Iconsax.eye_slash),
+                        ),
+                        style: TextStyle(
+                            fontSize: 15), // Adjust the font size as needed
+                      ),
+                    ),
+
                     const SizedBox(
                       height: TSizes.spaceBtwInputFields,
-                    ),
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        prefixIcon: Icon(Iconsax.password_check),
-                        labelText: "Enter your password.",
-                        suffixIcon: Icon(Iconsax.eye_slash),
-                      ),
                     ),
                     const SizedBox(
                       height: TSizes.spaceBtwInputFields / 2,
@@ -118,7 +129,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                         width: double.infinity,
                         child: OutlinedButton(
-                            onPressed: () {}, child: const Text("Create Account")))
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => SignUpScreen(),
+                                ),
+                              );
+                            },
+                            child: const Text("Create Account")))
                   ],
                 ),
               )),
