@@ -1,5 +1,5 @@
 /// This class contains all the App Text in String formats.
-class Texts {
+class TTexts {
   // OnBoarding Texts
   static const String onBoardingTitle1 =
       "Choose your product"; // Corrected missing equal sign after 'onBoardingTitle1'
@@ -15,4 +15,6 @@ class Texts {
   // Home
   static const String homeAppbarTitle = "Good day for shopping";
   static const String homeAppbarSubTitle = "Kunal Doliya";
+  static const String loginTitle = "Welcome back,";
+  static const String loginSubTitle = "Discover Limitless choices and unmatched Convenience.";
 }
