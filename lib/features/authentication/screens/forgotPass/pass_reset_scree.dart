@@ -52,7 +52,9 @@ class PasswordResetScreen extends StatelessWidget {
                   child: const Text("Done"),
                 ),
               ),
-              SizedBox(height: TSizes.spaceBtwInputFields*2,),
+              SizedBox(
+                height: TSizes.spaceBtwInputFields * 2,
+              ),
               TextButton(
                   onPressed: () {},
                   child: const Text(

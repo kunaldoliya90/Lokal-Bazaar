@@ -1,11 +1,13 @@
 import 'package:ecomapp/common/styles/spacing_styles.dart';
 import 'package:ecomapp/features/authentication/screens/forgotPass/pass_reset_scree.dart';
 import 'package:ecomapp/features/authentication/screens/signup/signup_screen.dart';
+import 'package:ecomapp/navigation_menu.dart';
 import 'package:ecomapp/utils/constants/colors.dart';
 import 'package:ecomapp/utils/constants/image_strings.dart';
 import 'package:ecomapp/utils/constants/sizes.dart';
 import 'package:ecomapp/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -124,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 backgroundColor:
                                     MaterialStateProperty.resolveWith(
                                         (states) => TColors.primary)),
-                            onPressed: () {},
+                            onPressed: () => Get.to(() =>  NavigationMenu()),
                             child: const Text(
                               "Sign In",
                               style: TextStyle(color: TColors.light),
