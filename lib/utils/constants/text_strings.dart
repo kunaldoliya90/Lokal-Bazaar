@@ -16,5 +16,15 @@ class TTexts {
   static const String homeAppbarTitle = "Good day for shopping";
   static const String homeAppbarSubTitle = "Kunal Doliya";
   static const String loginTitle = "Welcome back,";
-  static const String loginSubTitle = "Discover Limitless choices and unmatched Convenience.";
+  static const String loginSubTitle =
+      "Discover Limitless choices and unmatched Convenience.";
+  static const String VerifyEmailScreenTitle = "Verify your email address!";
+  static const String VerifyEmailScreenEmail = "prajapatikunal3482@gmail.com";
+  static const String VerifyEmailScreenSubTitle =
+      "Congratulations! Your account awaits Verify your Email to Start Shopping and Experience a World of Unrivaled Deals & Personalised offers.";
+  // ignore: constant_identifier_names
+  static const String SuccessScreenTitle = "Your account successfully created!";
+  // ignore: constant_identifier_names
+  static const String SuccessScreenSubTitle =
+      "Welcome to your ultimate shopping destination your account is created unleash the joy of seamless online shopping.";
 }

@@ -1,8 +1,8 @@
 import 'package:ecomapp/common/styles/spacing_styles.dart';
+import 'package:ecomapp/features/authentication/screens/signup/verify_email.dart';
 import 'package:ecomapp/utils/constants/colors.dart';
 import 'package:ecomapp/utils/constants/image_strings.dart';
 import 'package:ecomapp/utils/constants/sizes.dart';
-import 'package:ecomapp/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -60,6 +60,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 child: SizedBox(
                                   height: 60, // Adjust the height as needed
                                   child: TextFormField(
+                                    style: const TextStyle(
+                                        fontSize: TSizes.fontSizeMd),
                                     decoration: const InputDecoration(
                                       prefixIcon: Icon(Iconsax.user),
                                       labelText: "First Name",
@@ -72,6 +74,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 child: SizedBox(
                                   height: 60, // Adjust the height as needed
                                   child: TextFormField(
+                                    style: const TextStyle(
+                                        fontSize: TSizes.fontSizeMd),
                                     decoration: const InputDecoration(
                                       prefixIcon: Icon(Iconsax.user),
                                       labelText: "Last Name",
@@ -85,6 +89,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           SizedBox(
                             height: 60, // Adjust the height as needed
                             child: TextFormField(
+                              style:
+                                  const TextStyle(fontSize: TSizes.fontSizeMd),
                               decoration: const InputDecoration(
                                 prefixIcon: Icon(Iconsax.user),
                                 labelText: "Username",
@@ -95,6 +101,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           SizedBox(
                             height: 60, // Adjust the height as needed
                             child: TextFormField(
+                              style:
+                                  const TextStyle(fontSize: TSizes.fontSizeMd),
                               decoration: const InputDecoration(
                                 prefixIcon: Icon(Iconsax.direct_right),
                                 labelText: "Email",
@@ -105,6 +113,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           SizedBox(
                             height: 60, // Adjust the height as needed
                             child: TextFormField(
+                              style:
+                                  const TextStyle(fontSize: TSizes.fontSizeMd),
                               decoration: const InputDecoration(
                                 prefixIcon: Icon(Iconsax.mobile),
                                 labelText: "Phone Number",
@@ -115,6 +125,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           SizedBox(
                             height: 60, // Adjust the height as needed
                             child: TextFormField(
+                              style:
+                                  const TextStyle(fontSize: TSizes.fontSizeMd),
                               obscureText: true,
                               decoration: const InputDecoration(
                                 prefixIcon: Icon(Iconsax.password_check),
@@ -164,7 +176,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             width: double
                                 .infinity, // Set the width to match the TextFormField
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => VerifyEmailScreen(),
+                                  ),
+                                );
+                              },
                               child: Text("Create Account"),
                             ),
                           )
