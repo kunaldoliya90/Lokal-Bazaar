@@ -1,4 +1,5 @@
 import 'package:ecomapp/common/styles/spacing_styles.dart';
+import 'package:ecomapp/features/authentication/screens/forgotPass/pass_reset_scree.dart';
 import 'package:ecomapp/features/authentication/screens/signup/signup_screen.dart';
 import 'package:ecomapp/utils/constants/colors.dart';
 import 'package:ecomapp/utils/constants/image_strings.dart';
@@ -99,7 +100,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           ],
                         ),
                         TextButton(
-                            onPressed: () {},
+                            onPressed: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (_) =>
+                                          const PasswordResetScreen()),
+                                ),
                             child: const Text(
                               'Forget Password',
                               style: TextStyle(fontSize: 15),

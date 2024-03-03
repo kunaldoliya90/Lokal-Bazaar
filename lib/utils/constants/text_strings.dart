@@ -24,7 +24,12 @@ class TTexts {
       "Congratulations! Your account awaits Verify your Email to Start Shopping and Experience a World of Unrivaled Deals & Personalised offers.";
   // ignore: constant_identifier_names
   static const String SuccessScreenTitle = "Your account successfully created!";
-  // ignore: constant_identifier_names
   static const String SuccessScreenSubTitle =
-      "Welcome to your ultimate shopping destination your account is created unleash the joy of seamless online shopping.";
+      "Congratulations! Your account awaits Verify your Email to Start Shopping and Experience a World of Unrivaled Deals & Personalised offers.";
+  // ignore: constant_identifier_names
+  static const String PassResetTitle = "Password Reset Email Sent";
+  static const String PassResetEmail = "prajapatikunal3482@gmail.com";
+  // ignore: constant_identifier_names
+  static const String PassResetSubTitle =
+      "Your Account Security is Our Priority We Sent You a Secure Link to safety Change your Password and Keep Your Account Protected.";
 }
