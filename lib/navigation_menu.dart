@@ -1,7 +1,7 @@
-import 'package:ecomapp/features/authentication/screens/afterloginUIs/homeui/home.dart';
-import 'package:ecomapp/features/authentication/screens/afterloginUIs/profileui/profile_ui.dart';
-import 'package:ecomapp/features/authentication/screens/afterloginUIs/storeui/store.dart';
-import 'package:ecomapp/features/authentication/screens/afterloginUIs/wishlistui/wishlist_ui.dart';
+import 'package:ecomapp/features/shop/screens/afterloginUIs/homeui/home.dart';
+import 'package:ecomapp/features/shop/screens/afterloginUIs/profileui/profile_ui.dart';
+import 'package:ecomapp/features/shop/screens/afterloginUIs/storeui/store.dart';
+import 'package:ecomapp/features/shop/screens/afterloginUIs/wishlistui/wishlist_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
