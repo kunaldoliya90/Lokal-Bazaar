@@ -32,4 +32,5 @@ class TTexts {
   // ignore: constant_identifier_names
   static const String PassResetSubTitle =
       "Your Account Security is Our Priority We Sent You a Secure Link to safety Change your Password and Keep Your Account Protected.";
+
 }
