@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 
 class TPrimaryHeaderContainerWidget extends StatelessWidget {
   const TPrimaryHeaderContainerWidget({
-    Key? key,
+    super.key,
     required this.child,
-  }) : super(key: key); // Correct syntax to call superclass constructor
+  });
 
   final Widget child;
 
