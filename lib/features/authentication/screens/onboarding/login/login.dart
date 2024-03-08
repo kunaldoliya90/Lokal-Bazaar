@@ -6,19 +6,52 @@ import 'package:ecomapp/utils/constants/colors.dart';
 import 'package:ecomapp/utils/constants/image_strings.dart';
 import 'package:ecomapp/utils/constants/sizes.dart';
 import 'package:ecomapp/utils/constants/text_strings.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   bool rememberMe = false;
+  bool isLoading = false;
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  Future<void> signIn() async {
+    setState(() {
+      isLoading = true;
+    });
+
+    try {
+      await _auth.signInWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
+
+      // Navigate to NavigationMenu after successful sign-in
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => NavigationMenu()),
+      );
+    } catch (e) {
+      print('Error signing in: $e');
+      // Handle sign-in errors here
+    }
+
+    setState(() {
+      isLoading = false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   children: [
                     TextFormField(
+                      controller: emailController,
                       decoration: const InputDecoration(
                         prefixIcon: Icon(Iconsax.direct_right),
                         labelText: "Enter your email.",
@@ -66,6 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       height: 60, // Adjust the height as needed
                       child: TextFormField(
+                        controller: passwordController,
                         decoration: const InputDecoration(
                           prefixIcon: Icon(Iconsax.password_check),
                           labelText: "Enter your password.",
@@ -122,15 +157,18 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                         width: double.infinity,
                         child: OutlinedButton(
-                            style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.resolveWith(
-                                        (states) => TColors.primary)),
-                            onPressed: () => Get.to(() =>  NavigationMenu()),
-                            child: const Text(
-                              "Sign In",
-                              style: TextStyle(color: TColors.light),
-                            ))),
+                          style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStateProperty.resolveWith(
+                                      (states) => TColors.primary)),
+                          onPressed: signIn,
+                          child: isLoading
+                              ? CircularProgressIndicator()
+                              : Text(
+                                  'Sign In',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                        )),
                     const SizedBox(
                       height: TSizes.spaceBtwItems,
                     ),

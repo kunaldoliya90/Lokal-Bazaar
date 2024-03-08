@@ -1,4 +1,5 @@
 import 'package:ecomapp/features/authentication/screens/onboarding/login/login.dart';
+import 'package:ecomapp/navigation_menu.dart';
 import 'package:ecomapp/utils/constants/image_strings.dart';
 import 'package:ecomapp/utils/constants/sizes.dart';
 import 'package:ecomapp/utils/constants/text_strings.dart';
@@ -15,7 +16,7 @@ class SuccessScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all((TSizes.defaultSpace)),
-          child: Column(
+          child: Column(mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // Image
               Image(
@@ -31,7 +32,7 @@ class SuccessScreen extends StatelessWidget {
               ),
               const SizedBox(height: TSizes.spaceBtwItems * 2),
               Text(
-                TTexts.SuccessScreenSubTitle,
+                'Congratulations! Start Shopping and Experience a World of Unrivaled Deals & Personalised offers.',
                 style: Theme.of(context).textTheme.labelMedium,
                 textAlign: TextAlign.center,
               ),
@@ -42,7 +43,7 @@ class SuccessScreen extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () => Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (_) => const LoginScreen()),
+                    MaterialPageRoute(builder: (_) => const NavigationMenu()),
                   ),
                   child: const Text("Continue"),
                 ),

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "265720157858",
+    "project_id": "lokalshop-24d55",
+    "storage_bucket": "lokalshop-24d55.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265720157858:android:95112522965fb40112a9fb",
+        "android_client_info": {
+          "package_name": "com.example.ecomapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnWIhSaTC6nCqNZYPC9-pM84Di_vKEqiY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
