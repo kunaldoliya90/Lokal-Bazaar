@@ -1,6 +1,5 @@
 import 'package:ecomapp/common/styles/spacing_styles.dart';
 import 'package:ecomapp/features/authentication/screens/signup/success_screen.dart';
-import 'package:ecomapp/features/authentication/screens/signup/verify_email.dart';
 import 'package:ecomapp/utils/constants/colors.dart';
 import 'package:ecomapp/utils/constants/image_strings.dart';
 import 'package:ecomapp/utils/constants/sizes.dart';

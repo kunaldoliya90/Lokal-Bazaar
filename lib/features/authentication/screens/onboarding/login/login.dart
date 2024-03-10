@@ -8,7 +8,7 @@ import 'package:ecomapp/utils/constants/sizes.dart';
 import 'package:ecomapp/utils/constants/text_strings.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -64,9 +64,12 @@ class _LoginScreenState extends State<LoginScreen> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Image(
-                    image: AssetImage(TImages.darkAppLogo),
+                  Image(
+                    image:
+                        AssetImage('assets/images/onboarding_images/logo.png'),
                     height: 100,
+                    width: MediaQuery.of(context).size.width/2,
+                    fit: BoxFit.fitWidth,
                   ),
                   Text(
                     TTexts.loginTitle,
@@ -100,6 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       height: 60, // Adjust the height as needed
                       child: TextFormField(
+                        obscureText: true,
                         controller: passwordController,
                         decoration: const InputDecoration(
                           prefixIcon: Icon(Iconsax.password_check),

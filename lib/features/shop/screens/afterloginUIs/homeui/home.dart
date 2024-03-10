@@ -165,7 +165,7 @@ class HomeUI extends StatelessWidget {
           children: [
             Image.network(
               image,
-              height: 140,
+              height: 110,
               width: 250,
               fit: BoxFit.fill,
             ),

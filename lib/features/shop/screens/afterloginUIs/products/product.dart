@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ecomapp/features/shop/screens/afterloginUIs/products/buynow.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ProductData extends StatefulWidget {
@@ -100,20 +102,25 @@ class _ProductDataState extends State<ProductData> {
         width: MediaQuery.of(context).size.width,
         color: Colors.purpleAccent,
         child: Center(
-          child: Container(
-            height: 60,
-            width: MediaQuery.of(context).size.width * 0.8,
-            decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(16)),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Buy Now'),
-                SizedBox(
-                  width: 10,
-                ),
-                Icon(Icons.shopping_bag)
-              ],
+          child: GestureDetector(
+            onTap: () {
+              Get.to(() => BuyNow(product: widget.product));
+            },
+            child: Container(
+              height: 60,
+              width: MediaQuery.of(context).size.width * 0.8,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(16)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Buy Now'),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Icon(Icons.shopping_bag)
+                ],
+              ),
             ),
           ),
         ),
