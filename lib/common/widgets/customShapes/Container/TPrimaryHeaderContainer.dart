@@ -35,6 +35,7 @@ class TPrimaryHeaderContainerWidget extends StatelessWidget {
                 right: -300,
                 child: TCircularContainer(
                   backgroundColor: TColors.white.withOpacity(0.1),
+                  // Comments Added
                 ),
               ),
               const Column(
@@ -44,7 +45,6 @@ class TPrimaryHeaderContainerWidget extends StatelessWidget {
                   SizedBox(
                     height: TSizes.spaceBtwSections,
                   ),
-                  
                 ],
               ),
             ],
