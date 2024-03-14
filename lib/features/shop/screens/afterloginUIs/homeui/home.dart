@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecomapp/common/widgets/customShapes/Container/TPrimaryHeaderContainer.dart';
 import 'package:ecomapp/features/shop/screens/afterloginUIs/products/allProducts.dart';
 import 'package:ecomapp/features/shop/screens/afterloginUIs/products/product.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +14,7 @@ class HomeUI extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        actions: [
+        actions: const [
           Padding(
             padding: EdgeInsets.only(right: 13),
             child: Icon(
@@ -37,7 +36,7 @@ class HomeUI extends StatelessWidget {
           child: Column(
             children: [
               HorizontalScrollBanner(),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Padding(
@@ -55,7 +54,7 @@ class HomeUI extends StatelessWidget {
                           ),
                           GestureDetector(
                             onTap: () {
-                              Get.to(() => allProducts());
+                              Get.to(() => const allProducts());
                             },
                             child: Text(
                               'See all',
@@ -65,7 +64,7 @@ class HomeUI extends StatelessWidget {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       FutureBuilder(
@@ -76,7 +75,7 @@ class HomeUI extends StatelessWidget {
                             AsyncSnapshot<QuerySnapshot> snapshot) {
                           if (snapshot.connectionState ==
                               ConnectionState.waiting) {
-                            return Center(
+                            return const Center(
                               child: CircularProgressIndicator(),
                             );
                           }
@@ -90,7 +89,7 @@ class HomeUI extends StatelessWidget {
                             shrinkWrap: true,
                             itemCount: products.length,
                             gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
+                                const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 2,
                               crossAxisSpacing: 10.0,
                               mainAxisSpacing: 10.0,
@@ -144,7 +143,7 @@ class HomeUI extends StatelessWidget {
         child: FittedBox(
           child: Text(
             text,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               color: Colors.black,
             ),

@@ -9,11 +9,7 @@ class TPrimaryHeaderContainerWidget extends StatelessWidget {
   const TPrimaryHeaderContainerWidget({
     super.key,
     required this.child,
-<<<<<<< HEAD
-  }); // Correct syntax to call superclass constructor
-=======
   });
->>>>>>> b5208dbf774db45fbabad8d2f75da198a33f6aa3
 
   final Widget child;
 
@@ -39,7 +35,6 @@ class TPrimaryHeaderContainerWidget extends StatelessWidget {
                 right: -300,
                 child: TCircularContainer(
                   backgroundColor: TColors.white.withOpacity(0.1),
-                  // Comments Added
                 ),
               ),
               const Column(
