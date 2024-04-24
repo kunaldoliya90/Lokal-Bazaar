@@ -1,3 +1,4 @@
+import 'package:ecomapp/features/authentication/screens/onboarding/on_boarding_screen_2.dart';
 import 'package:ecomapp/features/authentication/screens/onboarding/onboarding_screen.dart';
 import 'package:ecomapp/navigation_menu.dart';
 import 'package:ecomapp/utils/theme/theme.dart';
@@ -46,7 +47,7 @@ class _AppState extends State<App> {
       themeMode: ThemeMode.system,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
-      home: login ? NavigationMenu() : OnBoardingScreen(),
+      home: login ? NavigationMenu() : SplashScreen(),
     );
   }
 }

@@ -67,16 +67,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   Image(
                     image:
                         AssetImage('assets/images/onboarding_images/logo.png'),
-                    height: 100,
+                    height: MediaQuery.of(context).size.width/3.5,
                     width: MediaQuery.of(context).size.width/2,
                     fit: BoxFit.fitWidth,
                   ),
                   Text(
                     TTexts.loginTitle,
-                    style: Theme.of(context).textTheme.headlineMedium!,
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w800),
                   ),
-                  const SizedBox(
-                    height: TSizes.sm,
+                  SizedBox(
+                    height: MediaQuery.of(context).size.width/25,
                   ),
                   Text(
                     TTexts.loginSubTitle,
@@ -84,6 +84,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   )
                 ],
               ),
+              SizedBox(
+                    height: MediaQuery.of(context).size.width/20,
+                  ),
               Form(
                   child: Padding(
                 padding: const EdgeInsets.symmetric(

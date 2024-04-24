@@ -1,5 +1,5 @@
 import 'package:ecomapp/features/shop/screens/afterloginUIs/products/product.dart';
-import 'package:ecomapp/features/shop/screens/afterloginUIs/profileui/profile_ui.dart';
+// import 'package:ecomapp/features/shop/screens/afterloginUIs/profileui/profile_ui.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -39,8 +39,7 @@ class WishlistUI extends StatelessWidget {
           StreamBuilder<DocumentSnapshot>(
             stream: FirebaseFirestore.instance
                 .collection('wishlist')
-                .doc(FirebaseAuth.instance.currentUser!
-                    .email) // Assuming user's email is 'user@gmail.com'
+                .doc(FirebaseAuth.instance.currentUser!.email)
                 .snapshots(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
@@ -48,21 +47,32 @@ class WishlistUI extends StatelessWidget {
                   child: CircularProgressIndicator(),
                 );
               }
-              if (!snapshot.hasData || snapshot.data == null) {
+              if (!snapshot.hasData ||
+                  snapshot.data == null ||
+                  !snapshot.data!.exists) {
                 return Center(
                   child: Text('No items in wishlist'),
                 );
               }
-              var wishlistData = snapshot.data;
-              List<dynamic> likedProducts = wishlistData!['liked'];
+              var wishlistData = snapshot.data!;
 
-              return ListView.builder(
-                shrinkWrap: true,
-                itemCount: likedProducts.length,
-                itemBuilder: (context, index) {
-                  return wishlistItem(likedProducts[index], context);
-                },
-              );
+              // Check if the 'liked' field exists in the document
+              if (wishlistData.exists && wishlistData['liked'] != null) {
+                List<dynamic> likedProducts = wishlistData['liked'];
+
+                return ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: likedProducts.length,
+                  itemBuilder: (context, index) {
+                    return wishlistItem(likedProducts[index], context);
+                  },
+                );
+              } else {
+                // Handle the case where 'liked' field does not exist or is null
+                return Center(
+                  child: Text('No items liked yet'),
+                );
+              }
             },
           ),
         ],
@@ -140,7 +150,6 @@ class WishlistUI extends StatelessWidget {
                           '₹${price}',
                           style: TextStyle(color: Colors.black, fontSize: 22),
                         ),
-                        
                       ],
                     ),
                   ],
